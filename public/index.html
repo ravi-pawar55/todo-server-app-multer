@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo Server App</title>
+  <link href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="w-full h-screen bg-gray-100 pt-8 bg-blue-200">
+  <div class="bg-white p-3 min-w-sm max-w-5xl mx-auto shadow-2xl">
+    <div class="text-center">
+      <h1 class="text-4xl  font-bold " >ToDo Server App</h1>
+    </div>
+    <br><br> 
+    <div class="flex flex-row justify-evenly">
+        <div >
+          <div class="text-center">
+              <h2 class="text-xl font-bold">ToDo List</h2>
+          </div>
+          <br> 
+          <table>
+            <tr class="text-gray-400 text-lg">
+              <th>Status</th>
+              <th>Task</th>
+              <th>Task Image</th>
+              <th>Priority</th>
+              <th>Delete</th>
+            </tr>
+            <tbody id="todoList">
+            </tbody>
+          </table>
+      </div>
+      <div >
+          <div class="text-center">
+              <h2 class="text-xl font-bold">Add New ToDo </h2>
+          </div> 
+           <form action="/newTodo" method="post" enctype="multipart/form-data" class="mt-6 flex flex-col space-x-2">
+            <input name="todoText" class="w-80 border-b-2 border-gray-500 text-black" type="text" name="task" placeholder="Enter your task here"  required  />
+            <br>
+            <label for="file">Select Task Image</label>
+            <input type="file" accept="image/*" name="todoFile" required>
+            <br>
+            <label for="priority">Select Task Priority</label>
+            <select name="priority" class="w-20 border-2 border-gray-500 rounded-lg">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+            <br>
+            <button type="submit" class="ml-2 border-2 border-green-500 p-2 text-green-500 hover:text-white hover:bg-green-500 rounded-lg flex justify-center">
+              <svg class="h-6 w-6"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="12" r="9" />  <line x1="9" y1="12" x2="15" y2="12" />  <line x1="12" y1="9" x2="12" y2="15" /></svg>
+                      <span>Add ToDo</span>
+            </button>
+          </form>
+      </div>
+      </div>
+    </div>
+    <div class="">
+      <p class="flex justify-center text-gray-500 font-bold mt-10">Made with love ❤️ @ravi_pawar_55</p>
+    </div>
+</div>
+<script src="/scripts.js"></script>
+</body>
+</html>
